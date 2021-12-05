@@ -3,11 +3,14 @@ import Header from "../components/Header";
 import Icon from "@material-tailwind/react/Icon";
 import Button from "@material-tailwind/react/Button";
 import Image from "next/image";
-import { getSession, useSession } from "next-auth/client";
+import { getSession, useSession } from "next-auth/react";
+import Login from "../components/Login";
 
 export default function Home() {
+  const { session } = useSession();
 
-  const[session] = useSession();
+  if (!session) return <Login />;
+
   return (
     <div>
       <Head>
@@ -36,19 +39,20 @@ export default function Home() {
               <Image src="https://links.papareact.com/pju" layout="fill" />
             </div>
 
-            <p className="ml-2 mt-2 font-semibold text-sm text-gray-700">Blank</p>
+            <p className="ml-2 mt-2 font-semibold text-sm text-gray-700">
+              Blank
+            </p>
           </div>
         </div>
       </section>
 
-      <section className='bd-white px-10 md:px-0'>
+      <section className="bd-white px-10 md:px-0">
         <div className="max-w-3xl mx-auto py-8 text-sm text-gray-700">
           <div className="flex items-center justify-between pb-5">
-            <h2 className='font-medium flex-grow'>My Documents</h2>
+            <h2 className="font-medium flex-grow">My Documents</h2>
             <p>Documents created</p>
             <Icon name="folder" size="3xl" color="gray" />
           </div>
-
         </div>
       </section>
     </div>
