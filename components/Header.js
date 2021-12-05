@@ -37,7 +37,7 @@ function Header() {
       </Button>
       <img
         loading="lazy"
-        className="cursor-pointer h-12 w-12 rounded-full ml-2"
+        className=" hidden cursor-pointer h-12 w-12 rounded-full ml-2"
         src="https://cdn5.vectorstock.com/i/1000x1000/01/69/businesswoman-character-avatar-icon-vector-12800169.jpg"
         alt=""
       />
